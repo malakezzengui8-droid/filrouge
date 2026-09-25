@@ -1,0 +1,183 @@
+.urgent-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.urgent-filters {
+  display: flex;
+  gap: 0.8rem;
+  margin: 1.4rem 0 1.6rem;
+}
+
+.urgent-filters select {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 0.9rem;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.urgent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.urgent-card {
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+}
+
+.urgent-card-body {
+  flex: 1;
+}
+
+.urgent-card-title {
+  font-weight: 600;
+  margin-top: 0.55rem;
+}
+
+.urgent-card-meta {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+}
+
+.urgent-card-reason {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+}
+
+.urgent-card-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.7rem;
+  flex-shrink: 0;
+}
+
+.urgent-card-time {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+/* Back link used on detail and create pages */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  margin-bottom: 1rem;
+}
+
+/* Create / edit request form */
+.request-form-card {
+  max-width: 560px;
+  padding: 1.8rem 2rem;
+  margin-top: 1.2rem;
+}
+
+.request-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin-top: 0.4rem;
+}
+
+.form-hint {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-top: -0.2rem;
+  margin-bottom: 1rem;
+}
+
+/* Request detail page */
+.detail-card {
+  max-width: 640px;
+  padding: 1.8rem 2rem;
+  margin-top: 1.2rem;
+}
+
+.detail-top {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.detail-title {
+  font-size: 1.2rem;
+  margin-top: 0.2rem;
+}
+
+.detail-meta {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+}
+
+.detail-section {
+  margin-top: 1.4rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border);
+}
+
+.detail-section h3 {
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+}
+
+.detail-contact {
+  display: flex;
+  gap: 1.6rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 1.4rem;
+}
+
+.compatible-donors-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.compatible-donor-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.compatible-donor-name {
+  font-weight: 500;
+}
+
+.compatible-donor-meta {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 860px) {
+  .urgent-header {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .urgent-card {
+    flex-direction: column;
+  }
+  .urgent-card-side {
+    align-items: flex-start;
+    width: 100%;
+  }
+}

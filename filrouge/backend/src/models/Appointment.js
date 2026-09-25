@@ -2,6 +2,8 @@ import mongoose from 'mongoose';
 
 const APPOINTMENT_STATUSES = ['PENDING', 'CONFIRMED', 'REJECTED', 'COMPLETED', 'CANCELLED'];
 
+const INITIATED_BY = ['DONOR', 'REQUESTER'];
+
 const appointmentSchema = new mongoose.Schema(
   {
     request: {
@@ -26,7 +28,12 @@ const appointmentSchema = new mongoose.Schema(
       type: String,
       enum: APPOINTMENT_STATUSES,
       default: 'PENDING'
-    }
+    },
+     initiatedBy: {
+      type: String,
+      enum: INITIATED_BY,
+      default: 'DONOR'
+    },
   },
   { timestamps: true }
 );

@@ -1,0 +1,104 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: 1.6rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0 0.4rem 1.6rem;
+}
+
+.sidebar-logo-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: var(--red);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sidebar-logo-text {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  border: none;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+}
+
+.sidebar-link:hover {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.sidebar-link.active {
+  background: var(--gold-bg);
+  color: var(--gold-text);
+  font-weight: 600;
+}
+
+.sidebar-link-button {
+  cursor: pointer;
+}
+
+.sidebar-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 1rem 0.4rem;
+}
+
+.page {
+  flex: 1;
+  padding: 2.6rem 3rem;
+  min-width: 0;
+}
+
+@media (max-width: 860px) {
+  .sidebar {
+    width: 76px;
+    padding: 1.4rem 0.5rem;
+  }
+  .sidebar-logo-text,
+  .sidebar-link span {
+    display: none;
+  }
+  .sidebar-link {
+    justify-content: center;
+  }
+  .page {
+    padding: 1.6rem;
+  }
+}

@@ -1,4 +1,4 @@
-import * as requestService from '../services/requestService.js';
+import * as requestService from "../services/requestService.js";
 
 // POST /api/requests
 async function publish(req, res, next) {
@@ -14,7 +14,10 @@ async function publish(req, res, next) {
 async function getAll(req, res, next) {
   try {
     const { city, bloodType } = req.query;
-    const requests = await requestService.getActiveRequests({ city, bloodType });
+    const requests = await requestService.getActiveRequests({
+      city,
+      bloodType,
+    });
     res.status(200).json(requests);
   } catch (error) {
     next(error);
@@ -38,7 +41,7 @@ async function updateStatus(req, res, next) {
       req.params.id,
       req.user.id,
       req.user.role,
-      req.body.status
+      req.body.status,
     );
     res.status(200).json(request);
   } catch (error) {
@@ -49,11 +52,27 @@ async function updateStatus(req, res, next) {
 // GET /api/requests/:id/compatible-donors
 async function getCompatibleDonors(req, res, next) {
   try {
-    const donors = await requestService.findCompatibleDonors(req.params.id);
+    // console.log("************* get user id **************");
+    // console.log(req.user);
+    // console.log("************* get user id **************");
+    const userId = req.user.id;
+    const donors = await requestService.findCompatibleDonors(
+      req.params.id,
+      userId,
+    );
     res.status(200).json(donors);
   } catch (error) {
     next(error);
   }
 }
+// GET /api/requests/me
+async function getMine(req, res, next) {
+  try {
+    const requests = await requestService.getMyRequests(req.user.id);
+    res.status(200).json(requests);
+  } catch (error) {
+    next(error);
+  }
+}
 
-export { publish, getAll, getOne, updateStatus, getCompatibleDonors };
+export { publish, getAll, getOne, updateStatus, getCompatibleDonors, getMine };

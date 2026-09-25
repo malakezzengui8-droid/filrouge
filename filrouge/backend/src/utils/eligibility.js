@@ -1,4 +1,5 @@
-const DONATION_INTERVAL_DAYS = 90;
+// One simple, conservative rule for every donor.
+const DONATION_INTERVAL_DAYS = 120;
 
 function calculateNextDonationDate(lastDonationDate) {
   if (!lastDonationDate) return null;
@@ -30,4 +31,4 @@ function checkEligibility(lastDonationDate) {
   };
 }
 
-export { calculateNextDonationDate, calculateDaysRemaining, checkEligibility };
+export { DONATION_INTERVAL_DAYS, calculateNextDonationDate, calculateDaysRemaining, checkEligibility };

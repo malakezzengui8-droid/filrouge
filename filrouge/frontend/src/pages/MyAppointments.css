@@ -1,0 +1,49 @@
+.section-title {
+  font-size: 1rem;
+  margin: 1.6rem 0 0.8rem;
+}
+
+.my-appointments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.my-appointment-card {
+  padding: 1.1rem 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.my-appointment-main {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.my-appointment-type {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--red);
+  min-width: 46px;
+}
+
+.my-appointment-title {
+  font-weight: 600;
+}
+
+.my-appointment-meta {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 860px) {
+  .my-appointment-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

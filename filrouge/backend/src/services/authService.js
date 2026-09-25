@@ -79,7 +79,8 @@ async function getUserProfile(userId) {
 }
 
 async function updateUserProfile(userId, updates) {
-  const allowedFields = ['name', 'phone', 'city', 'bloodType', 'lastDonationDate'];
+  // lastDonationDate is updated only when an appointment is completed.
+  const allowedFields = ['name', 'phone', 'city', 'bloodType'];
   const safeUpdates = {};
 
   for (const field of allowedFields) {

@@ -1,0 +1,28 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: blood-is-gold-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  backend:
+    build:
+      context: ./backend
+    container_name: blood-is-gold-backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - MONGO_URI=mongodb://mongo:27017/filRouge
+      - JWT_SECRET=change_this_to_a_long_random_secret_key
+      - JWT_EXPIRES_IN=7d
+      - NODE_ENV=development
+    depends_on:
+      - mongo
+
+volumes:
+  mongo_data:

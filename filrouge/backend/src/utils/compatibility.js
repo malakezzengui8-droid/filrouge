@@ -15,4 +15,8 @@ function getCompatibleDonorTypes(bloodTypeNeeded) {
   return COMPATIBILITY_MAP[bloodTypeNeeded] || [];
 }
 
-export { getCompatibleDonorTypes };
+function isCompatibleDonor(donorBloodType, bloodTypeNeeded) {
+  return getCompatibleDonorTypes(bloodTypeNeeded).includes(donorBloodType);
+}
+
+export { getCompatibleDonorTypes, isCompatibleDonor };

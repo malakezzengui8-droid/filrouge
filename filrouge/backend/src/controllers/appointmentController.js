@@ -10,6 +10,21 @@ async function createAppointment(req, res, next) {
   }
 }
 
+// POST /api/requests/:id/invite  (body: { donorId })
+async function inviteDonor(req, res, next) {
+  try {
+    const appointment = await appointmentService.inviteDonor(
+      req.params.id,
+      req.body.donorId,
+      req.user.id,
+      req.user.role
+    );
+    res.status(201).json(appointment);
+  } catch (error) {
+    next(error);
+  }
+}
+
 // GET /api/requests/:id/appointments
 async function getRequestAppointments(req, res, next) {
   try {
@@ -55,10 +70,37 @@ async function rejectAppointment(req, res, next) {
   }
 }
 
+// PUT /api/appointments/:id/cancel
+async function cancelAppointment(req, res, next) {
+  try {
+    const appointment = await appointmentService.cancelAppointment(req.params.id, req.user.id, req.user.role);
+    res.status(200).json(appointment);
+  } catch (error) {
+    next(error);
+  }
+}
+
+// PUT /api/appointments/:id/complete
+async function completeAppointment(req, res, next) {
+  try {
+    const appointment = await appointmentService.completeAppointment(
+      req.params.id,
+      req.user.id,
+      req.user.role
+    );
+    res.status(200).json(appointment);
+  } catch (error) {
+    next(error);
+  }
+}
+
 export {
   createAppointment,
+  inviteDonor,
   getRequestAppointments,
   getMyAppointments,
   confirmAppointment,
-  rejectAppointment
+  rejectAppointment,
+  cancelAppointment,
+  completeAppointment
 };

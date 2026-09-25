@@ -1,0 +1,24 @@
+.blood-avatar {
+  background: var(--gold-bg);
+  color: var(--red-dark);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.blood-avatar-sm {
+  width: 34px;
+  height: 34px;
+  font-size: 0.85rem;
+  border-radius: 9px;
+}
+
+.blood-avatar-md {
+  width: 56px;
+  height: 56px;
+  font-size: 1.25rem;
+}

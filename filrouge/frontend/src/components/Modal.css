@@ -1,0 +1,30 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(34, 29, 25, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 100;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 380px;
+  padding: 1.5rem;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.modal-close {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  display: flex;
+}
